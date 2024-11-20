@@ -1,0 +1,161 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// recent posts section
+
+.recent {
+    &_bg, &_media {
+        display: none;
+    }
+
+    &_posts {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &-item {
+            &.static {
+                transform: none !important;
+            }
+            .media {
+                position: relative;
+                height: 220px;
+                margin-bottom: 15px;
+
+                img {
+                    height: 100%;
+                }
+
+                &_date {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 34px;
+                    background: $accentColor;
+                    color: #fff;
+                    padding: 0 15px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .main {
+                &_text {
+                    margin: 8px 0 15px;
+                }
+
+                &_link {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .recent {
+        &_posts {
+            &-item {
+                .media {
+                    height: 320px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .recent {
+        &_posts {
+            &-item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .media {
+                    height: 250px;
+                    width: 320px;
+                    margin-bottom: 0;
+                }
+
+                .main {
+                    width: calc(100% - 340px);
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .recent {
+
+        .container {
+            position: relative;
+        }
+
+        &_bg, &_media {
+            display: block;
+        }
+
+        &_bg {
+            color: $light;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        &_media {
+            height: 650px;
+            width: 500px;
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        &_posts {
+            margin-left: -150px;
+
+            &-item {
+                .main {
+                    width: calc(100% - 360px);
+
+                    &_title {
+                        display: block;
+                        max-width: 190px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1199.98px) {
+    .recent {
+        &_posts {
+            margin-left: -50px;
+        }
+    }
+}

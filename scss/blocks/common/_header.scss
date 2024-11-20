@@ -1,0 +1,308 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// header component
+
+.header {
+    z-index: 110000;
+    will-change: transform;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    .container {
+        min-height: 70px;
+        padding: 10px 20px;
+    }
+
+    &.sticky {
+        position: fixed;
+        background: $primary;
+    }
+
+    &.opened {
+        height: 100vh;
+    }
+
+    &--pinned {
+        transform: translateY(0%);
+    }
+
+    &--unpinned {
+        transform: translateY(-100%);
+    }
+
+    .logo {
+        margin-left: -10px;
+        font-size: 25px;
+
+        &_img {
+            margin-right: -10px;
+
+            svg {
+                max-height: 50px;
+            }
+        }
+    }
+
+    &_trigger {
+        order: 2;
+    }
+
+    &_nav {
+        order: 3;
+        width: 100%;
+        overflow-y: auto;
+        max-height: calc(100vh - 100px);
+        color: $headerColor;
+        margin-top: 30px;
+
+        &.collapsing {
+            overflow: hidden;
+        }
+
+        .nav-item, .nav-link {
+            &:hover, &:focus, &.current {
+                color: $accentColor;
+            }
+        }
+
+        .nav-link {
+            gap: 5px;
+            align-items: center;
+
+            &[data-single="true"] {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            &[aria-expanded="true"] {
+                .icon:after {
+                    top: -100%;
+                }
+            }
+
+            .icon {
+                width: 10px;
+                height: 10px;
+                position: relative;
+                overflow: hidden;
+
+                &:before, &:after {
+                    content: '';
+                    position: absolute;
+                    background: $accentColor;
+                }
+
+                &:before {
+                    height: 2px;
+                    width: 100%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:after {
+                    height: 100%;
+                    width: 2px;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: top .3s ease-in-out;
+                }
+            }
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            &_item {
+                .dropdown {
+                    &-toggle {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    &-menu {
+                        margin: 10px 10px 0;
+                    }
+                }
+            }
+        }
+
+        &-socials {
+            gap: 15px;
+            margin-top: 50px;
+
+            .link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: $light;
+                font-size: 22px;
+
+                .icon {
+                    transition: .3s ease-in-out;
+                }
+
+                &:hover, &:focus {
+                    background: $accentColor;
+
+                    .icon {
+                        color: $light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .header {
+
+        .logo {
+            font-size: 28px;
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1199.98px) {
+    .header {
+        height: 130px;
+        display: flex;
+        align-items: center;
+
+        .logo {
+            font-size: 32px;
+
+            &_img {
+                margin-right: 0;
+
+                svg {
+                    min-height: 76px;
+                }
+            }
+        }
+
+        &.sticky {
+            height: 100px;
+
+            .header_nav-list_item .dropdown-menu {
+                padding-top: 60px;
+            }
+        }
+
+        .container {
+            max-width: 100%;
+        }
+
+        &_trigger {
+            display: none;
+        }
+
+        &_nav {
+            display: flex !important;
+            margin: 0;
+            overflow: visible;
+
+            .nav-link {
+                &[data-single="true"] {
+                    font-size: 16px;
+                }
+            }
+
+            &-socials {
+                margin-top: 0;
+            }
+
+            &-list {
+                flex-direction: row;
+                flex-grow: 1;
+                align-items: center;
+                gap: 30px;
+                margin-left: 100px;
+
+                &_item {
+                    height: 100%;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    .dropdown {
+                        &-toggle {
+                            position: relative;
+                            z-index: 2;
+                            font-size: 16px;
+                        }
+
+                        &-menu {
+                            margin: 0;
+                            position: absolute;
+                            z-index: 1;
+                            opacity: 0;
+                            top: 0;
+                            padding-top: 50px;
+                            visibility: hidden;
+                            transition: opacity .3s ease;
+
+                            &.active {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+
+                            .list-item[data-main="true"] {
+                                display: none !important;
+                            }
+                        }
+
+                        &-list {
+                            background: $primary;
+                            margin: 0 0 0 -15px;
+                            padding: 10px 15px;
+                            width: max-content;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 15px;
+
+                            .nav-item {
+                                height: 100%;
+
+                                &:hover, &:focus,
+                                &.current {
+                                    color: $accentColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1399.98px) {
+    .header {
+        .container {
+            padding: 0 100px;
+        }
+    }
+}

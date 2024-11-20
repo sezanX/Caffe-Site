@@ -1,0 +1,232 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// hero section
+
+.hero {
+    padding-top: 140px;
+
+    &_media {
+        display: none;
+        z-index: -1;
+    }
+
+    &_main {
+        .section_header {
+            margin-bottom: 70px;
+
+            .wrapper {
+                margin-top: 30px;
+                gap: 25px;
+            }
+        }
+    }
+
+    &_slider {
+        height: 280px;
+        margin: 0 -20px;
+
+        img {
+            height: 100%;
+        }
+
+        &-nav {
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.banner {
+    display: none;
+    background: url("../img/placeholder.jpg") center no-repeat fixed / cover;
+}
+
+// media queries
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .hero {
+        position: relative;
+        padding-top: 170px;
+
+        &_slider {
+            height: 400px;
+        }
+
+        &_media {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            color: #EBEBEB;
+            overflow: hidden;
+
+            * {
+                position: absolute;
+            }
+
+            &-top {
+                top: -37%;
+                right: 0;
+                width: 530px;
+                height: 600px;
+                transform: rotate(-129deg);
+            }
+
+            &-bottom {
+                width: 530px;
+                height: 600px;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        &_main {
+            .section_header {
+                margin-bottom: 100px;
+
+                &-title {
+                    max-width: 320px;
+                }
+
+                &-text {
+                    max-width: 600px;
+                }
+
+                &-text, .wrapper {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .hero {
+        &_slider {
+            height: 600px;
+        }
+
+        &_main {
+            .section_header {
+                margin-bottom: 130px;
+
+                &-title {
+                    max-width: 500px;
+                }
+
+                &-text, .wrapper {
+                    margin-left: 40px;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1170px) {
+    .hero {
+        .container {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        &_main {
+            max-width: 1170px;
+            padding: 0 20px;
+        }
+
+        &_slider {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1199.98px) {
+    .hero {
+        &_media {
+            &-bottom {
+                left: 0;
+                bottom: 300px;
+            }
+        }
+    }
+    .banner {
+        display: block;
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 1399.98px) {
+    .hero {
+        padding-top: 130px;
+        height: 100vh;
+
+        .container {
+            display: flex;
+            margin-right: 0;
+            margin-left: calc(50vw - 585px);
+            max-width: unset;
+            padding: 0;
+            align-items: center;
+        }
+
+        &_media {
+            &-top {
+                top: -200px;
+                right: 100px;
+            }
+
+            &-bottom {
+                left: 0;
+                bottom: -170px;
+            }
+        }
+
+        &_main {
+            padding: 0;
+            margin-right: 100px;
+
+            .section_header {
+                margin-bottom: 0;
+            }
+        }
+
+        &_slider {
+            margin: 0;
+            height: calc(100vh - 130px);
+            flex-grow: 1;
+
+            &-nav {
+                width: fit-content;
+                top: unset;
+                transform: none;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .hero {
+        &_main {
+            min-width: 650px;
+        }
+    }
+}

@@ -1,0 +1,159 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// testimonials section
+
+.testimonials {
+    .media {
+        display: none;
+    }
+
+    .main {
+        background: $primary;
+        position: relative;
+        padding: 40px 30px;
+    }
+
+    &_bg {
+        position: absolute;
+        display: none;
+    }
+
+    &_header {
+        margin-bottom: 20px;
+
+        .icon {
+            display: none;
+            color: #C3B2A5;
+        }
+    }
+
+    &_slider {
+        &-slide {
+            .text {
+                margin-bottom: 15px;
+                max-width: 495px;
+            }
+        }
+
+        &-nav {
+            margin-top: 30px;
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .testimonials {
+        &_header {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            margin-left: -60px;
+            margin-bottom: 50px;
+
+            .icon {
+                display: inline-block;
+            }
+
+            .text {
+                position: relative;
+                bottom: -8px;
+                max-width: 315px;
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .testimonials {
+        .main {
+            padding: 45px 90px 130px;
+            overflow: hidden;
+        }
+
+        &_header, &_slider {
+            position: relative;
+            z-index: 2;
+        }
+
+        &_header {
+            gap: 40px;
+            margin-left: -145px;
+            .text {
+                bottom: -11px;
+            }
+        }
+
+        &_slider {
+            &-slide {
+                .text {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        &_bg {
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            z-index: 1;
+
+            .oval {
+                position: absolute;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &--light {
+                    width: 700px;
+                    height: 700px;
+                    top: 300px;
+                    right: -290px;
+                    color: $light;
+                }
+
+                &--dark {
+                    width: 400px;
+                    height: 400px;
+                    top: 200px;
+                    right: -190px;
+                    color: #C3B2A5;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1199.98px) {
+    .testimonials {
+        display: flex;
+        .media {
+            display: block;
+            img {
+                height: 100%;
+            }
+        }
+        .media, .main {
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,235 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// about section
+
+.about, .menu {
+    background: $light;
+}
+
+.about {
+    &_media {
+        aspect-ratio: 1 / 1;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &_main {
+        .section_header {
+            margin-bottom: 0;
+            padding: 70px 20px;
+
+            .btn {
+                margin-top: 30px;
+                width: 100%;
+            }
+        }
+
+        .counter {
+            &_block {
+                padding: 30px 20px;
+                text-align: center;
+
+                &:first-of-type {
+                    background: #C3B2A5;
+                }
+
+                &:nth-of-type(2) {
+                    background: $accentColor;
+                }
+
+                &:last-of-type {
+                    background: $headerColor;
+                }
+
+                &.num {
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: 600;
+                    font-family: $accentFont;
+                    gap: 15px;
+
+                    .countNum {
+                        font-weight: 700;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    * {
+                        color: #fff !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .about {
+        &_main {
+            .section_header {
+                &-text, .btn {
+                    margin-left: 20px;
+                }
+
+                .btn {
+                    width: fit-content;
+                }
+            }
+
+            .counter {
+                display: flex;
+
+                &_block {
+                    &.num {
+                        width: calc(100% / 3);
+
+                        span:not(.countNum) {
+                            max-width: 120px;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .about {
+        &_media {
+            aspect-ratio: unset;
+            height: 400px;
+        }
+
+        &_main {
+            .section_header {
+                padding: 100px 20px;
+
+                &-text {
+                    max-width: 500px;
+                }
+            }
+
+            .counter {
+                &_block {
+                    &.num {
+                        span:not(.countNum) {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .about {
+        &_media {
+            display: none;
+        }
+
+        &_main {
+            .section_header {
+                padding: 130px 20px;
+                max-width: 1170px;
+                margin: 0 auto;
+
+                &-text, .btn {
+                    margin-left: 40px;
+                }
+            }
+
+            .counter {
+                &_block {
+                    padding: 50px 20px;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1199.98px) {
+    .about {
+        &_main {
+            &-wrapper {
+                flex-grow: 1;
+
+                .section_header, .about_main-wrapper_media {
+                    width: 50%;
+                }
+
+                .section_header {
+                    aspect-ratio: 1 / 1;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    max-width: 540px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1399.98px) {
+    .about {
+        &_container {
+            display: flex;
+        }
+
+        &_media {
+            display: block;
+            height: auto;
+        }
+
+        &_media, &_main {
+            width: 50%;
+        }
+
+        &_main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .section_header {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 130px 40px;
+
+                &-text, .btn {
+                    margin-left: 40px;
+                }
+            }
+
+            .counter {
+                &_block {
+                    padding: 50px 20px;
+                }
+            }
+        }
+    }
+}

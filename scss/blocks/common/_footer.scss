@@ -1,0 +1,137 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// footer component
+
+.footer {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &_about {
+        &-address {
+            margin: 15px 0 8px;
+        }
+    }
+
+    &_block {
+        &-title {
+            margin-bottom: 15px;
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px 0;
+
+            .link {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+
+                .icon {
+                    width: 18px;
+                }
+            }
+        }
+
+        &-socials {
+            margin-top: 15px;
+            gap: 15px;
+
+            .link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: $light;
+                font-size: 22px;
+
+                .icon {
+                    transition: .3s ease-in-out;
+                }
+
+                &:hover, &:focus {
+                    background: $accentColor;
+
+                    .icon {
+                        color: $light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- tablet
+
+@media screen and (min-width: 767.98px) {
+    .footer {
+        .container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 40px 0;
+        }
+
+        &_about {
+            .wrapper {
+                max-width: 270px;
+            }
+        }
+
+        &_about, &_block {
+            width: 50%;
+        }
+
+        .footer_about + .footer_block {
+            margin-top: 20px;
+        }
+    }
+}
+
+// --- desktop
+
+@media screen and (min-width: 1170px) {
+    .footer {
+        .container {
+            flex-wrap: nowrap;
+            gap: 0 15px;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        &_about, &_block {
+            width: auto;
+        }
+
+        &_block {
+            margin-top: 22px;
+
+            &-title {
+                margin-bottom: 30px;
+            }
+
+            &-subtitle {
+                margin-bottom: 20px;
+            }
+        }
+
+        .footer_about + .footer_block {
+            margin-top: 22px;
+        }
+    }
+}

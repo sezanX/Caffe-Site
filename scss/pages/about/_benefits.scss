@@ -1,0 +1,102 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// benefits section
+
+.page_cover {
+    background: url("../img/placeholder.jpg") center no-repeat / cover;
+}
+
+.benefits {
+    background: $light;
+
+    &_list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            gap: 15px;
+
+            .main {
+                &_title {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .benefits {
+        &_list {
+            &-item {
+                flex-direction: row;
+                text-align: left;
+                justify-content: flex-start;
+                max-width: 370px;
+                gap: 20px;
+
+                .media {
+                    width: 60px;
+                }
+
+                .main {
+                    width: calc(100% - 80px);
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .benefits {
+        &_list {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            &-item {
+                width: calc(100% / 3 - 20px);
+                gap: 20px;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+
+                .main {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1023.98px) {
+    .benefits {
+        &_list {
+            &-item {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+        }
+    }
+}

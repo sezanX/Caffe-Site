@@ -1,0 +1,65 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// page header component
+
+.page {
+    &_cover,
+    &_breadcrumbs {
+        text-align: center;
+    }
+
+    &_cover {
+        padding: 0 20px;
+        height: 270px;
+
+        &-title {
+            margin-top: 70px;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+    }
+
+    &_breadcrumbs {
+        background: $primary;
+        padding: 20px;
+
+        &-list {
+            text-transform: capitalize;
+            li {
+                position: relative;
+                .link {
+                    color: $accentColor;
+                }
+                &:not(:last-of-type) {
+                    &:after {
+                        content: '/';
+                        padding-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+@media screen and (min-width: 1023.98px) {
+    .page {
+        &_cover {
+            height: 450px;
+            &-title {
+                margin-top: 130px;
+            }
+        }
+    }
+}

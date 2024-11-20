@@ -1,0 +1,370 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// blog sidebar component
+
+.sidebar {
+    gap: 20px;
+    height: fit-content;
+
+    &_widget {
+        &-title {
+            margin-bottom: 8px;
+        }
+
+        &:not(&--search) {
+            padding: 20px;
+            border: 1px solid #C3B2A5;
+        }
+
+        &--search {
+            .form {
+                .field {
+                    border-right: transparent;
+                    width: calc(100% - 60px);
+                }
+
+                .btn {
+                    padding: 0;
+                    flex-grow: 1;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &--posts {
+            .list {
+                gap: 20px;
+
+                &-item {
+                    .media {
+                        height: 130px;
+                        margin-bottom: 8px;
+
+                        img {
+                            height: 100%;
+                        }
+                    }
+
+                    .main {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+
+                        &_title {
+                            font-weight: 600;
+                        }
+
+                        .meta_item {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--nav {
+            .list {
+                gap: 4px;
+                font-size: 18px;
+
+                .link {
+                    display: block;
+                    position: relative;
+                    color: $accentColor;
+                    font-family: $accentFont;
+                    width: fit-content;
+                    font-weight: 600;
+                    bottom: 0;
+                    transition: .2s ease-in;
+
+                    &:hover {
+                        bottom: 4px;
+                    }
+                }
+            }
+        }
+
+        &--tags {
+            .list {
+                gap: 4px;
+
+                &-item {
+                    .link {
+                        display: block;
+                        position: relative;
+                        font-weight: 500;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                            background: $accentColor;
+                            transition: width .3s ease-in-out;
+                        }
+
+                        &:hover, &:focus {
+                            &:after {
+                                width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &--feed {
+            .sidebar_widget {
+                &-title {
+                    text-align: center;
+                }
+
+                &-subtitle {
+                    display: block;
+                    margin-bottom: 20px;
+                    color: $bodyColor;
+                }
+            }
+
+            .list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 8px;
+
+                &-item {
+                    aspect-ratio: 1 / 1;
+                    overflow: hidden;
+
+                    .link {
+                        &:hover {
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        img {
+                            height: 100%;
+                            transition: .3s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--archive {
+            .list {
+                gap: 8px;
+
+                &-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    * {
+                        line-height: 1 !important;
+                    }
+
+                    .link {
+                        position: relative;
+                        top: 1px;
+
+                        &:hover, &:focus {
+                            color: $accentColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--calendar {
+            text-align: center;
+
+            .calendar {
+                width: 100%;
+                margin-bottom: 20px;
+
+                &_nav {
+                    .link {
+                        .icon {
+                            transition: .3s ease-in-out;
+                        }
+
+                        &:hover, &:focus {
+                            .icon {
+                                color: $headerColor;
+                            }
+                        }
+                    }
+                }
+
+                &_header {
+                    margin-bottom: 20px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    font-family: $accentFont;
+                }
+
+                &_body {
+                    text-align: center;
+                    font-size: 14px;
+
+                    &-week {
+                        &_day {
+                            font-weight: 600;
+                        }
+                    }
+
+                    &-dates {
+                        height: 36px;
+                        color: $headerColor;
+
+                        &_date {
+                            cursor: pointer;
+                            cursor: pointer;
+                            transition: .3s ease-in-out;
+
+                            &--current {
+                                background: $accentColor;
+                                color: #fff;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &_banner {
+        position: relative;
+        overflow: hidden;
+        min-height: 350px;
+
+        &:hover {
+            .media img {
+                transform: scale(1.1);
+            }
+        }
+
+        .media {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+
+            img {
+                transition: .3s ease-in-out;
+                height: 100%;
+            }
+        }
+
+        .main {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+
+            &_btn {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .sidebar {
+        gap: 40px;
+
+        &_widget {
+            &-title {
+                margin-bottom: 20px;
+            }
+
+            &:not(&--search) {
+                padding: 40px;
+            }
+
+            &--feed {
+                .list {
+                    grid-gap: 20px;
+                }
+            }
+
+            &--tags {
+                .list {
+                    gap: 15px;
+                }
+            }
+
+            &--posts {
+                .list {
+                    gap: 40px;
+
+                    &-item {
+                        .media {
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+
+            &--nav {
+                .list {
+                    gap: 10px;
+                }
+            }
+        }
+
+        &_banner {
+            .main {
+                padding: 40px;
+
+                &_header {
+                    &-title {
+                        max-width: 240px;
+                    }
+                }
+
+                &_btn {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .sidebar {
+        width: 50%;
+
+        &_banner {
+            height: 500px;
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .sidebar {
+        flex-grow: 1;
+        max-width: 370px;
+    }
+}

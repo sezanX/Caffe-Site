@@ -1,0 +1,177 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// counter section
+
+.counter {
+    &_block {
+        padding: 30px 20px;
+        text-align: center;
+
+        &-img {
+            display: none;
+        }
+
+        &:first-of-type {
+            background: #E5DCD2;
+        }
+
+        &:nth-of-type(2) {
+            background: #C3B2A5;
+        }
+
+        &:nth-of-type(3) {
+            background: $accentColor;
+        }
+
+        &:last-of-type {
+            background: $headerColor;
+        }
+
+        &.num {
+            display: flex;
+            flex-direction: column;
+            font-weight: 600;
+            font-family: $accentFont;
+            gap: 4px;
+
+            .countNum {
+                font-weight: 700;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            * {
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .counter {
+        display: flex;
+        flex-wrap: wrap;
+
+        &_block {
+            width: 50%;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &:first-of-type {
+                text-align: left;
+            }
+
+            &.num {
+                .countNum {
+                    font-weight: 700;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .counter {
+        &_block {
+            height: 200px;
+
+            &.num {
+                .countNum {
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .counter {
+        &_block {
+            width: 25%;
+
+            &-title {
+                .linebreak {
+                    display: block;
+                }
+            }
+
+            &.num {
+                gap: 15px;
+
+                .countNum {
+                    height: 48px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1399.98px) {
+    .counter {
+        &_block {
+            padding: 0 60px;
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .counter {
+        &_block {
+            &-img {
+                position: absolute;
+                display: block;
+                color: #EBEBEB;
+                left: 155px;
+                top: -150px;
+            }
+
+            &:first-of-type {
+                position: relative;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1799.98px) {
+    .counter {
+        &_block {
+            &-img {
+                left: 160px;
+                top: -176px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1919.98px) {
+    .counter {
+        &_block {
+            &-img {
+                top: -225px;
+            }
+        }
+    }
+}

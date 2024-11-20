@@ -1,0 +1,302 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// blog page main content
+
+.page_cover {
+    background: url("../img/placeholder.jpg") center no-repeat / cover;
+}
+
+.blog {
+    gap: 50px 0;
+    margin-bottom: 70px;
+
+    &_post {
+        .media {
+            position: relative;
+            height: 220px;
+            margin-bottom: 20px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .main {
+            .meta {
+                margin: 4px 0;
+            }
+        }
+    }
+
+    &_quote {
+        background: $primary;
+
+        .main {
+            padding: 40px;
+
+            &_quote {
+                quotes: none;
+                margin: 20px 0;
+            }
+
+            &_name {
+                font-family: $accentFont;
+                font-weight: 600;
+                font-size: 18px;
+                color: $headerColor;
+            }
+        }
+
+        .media {
+            display: none;
+        }
+    }
+
+    &_banner {
+        position: relative;
+        background: $primary;
+        padding: 30px 20px;
+
+        .media {
+            display: none;
+        }
+    }
+
+    &_pagination {
+        font-size: 18px;
+        font-weight: 500;
+
+        .nav-link {
+
+            .icon {
+                transition: .3s ease-in-out;
+            }
+
+            &:hover, &:focus {
+                .icon {
+                    color: $headerColor;
+                }
+            }
+        }
+
+        .pages {
+            gap: 15px;
+
+            &_page {
+                .link {
+                    display: block;
+                    position: relative;
+
+                    &:hover, &:focus {
+                        color: $accentColor;
+                    }
+
+                    &--current {
+                        padding-right: 85px;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            display: block;
+                            height: 1px;
+                            width: 70px;
+                            background: $accentColor;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    .link--current {
+                        padding-right: 0;
+                        padding-left: 85px;
+
+                        &:after {
+                            right: unset;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .blog {
+        &_tags {
+            margin-left: 20px;
+        }
+
+        &_post {
+            .media {
+                .blog_tags {
+                    margin-left: 0;
+                }
+            }
+
+            .main {
+                &_title {
+                    display: block;
+                    margin-left: 20px;
+                }
+
+                .meta, &_text {
+                    margin-left: 40px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .blog {
+        gap: 60px 0;
+        margin-bottom: 100px;
+
+        &_post {
+            .media {
+                height: 370px;
+            }
+        }
+
+        &_quote {
+            position: relative;
+
+            .main {
+                position: relative;
+                z-index: 2;
+
+                &_quote {
+                    max-width: 680px;
+                }
+            }
+
+            .media {
+                display: block;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                overflow: hidden;
+
+                svg {
+                    height: 400px;
+                    width: 400px;
+                }
+
+                &_light, &_dark {
+                    position: absolute;
+                }
+
+                &_light {
+                    color: $light;
+                    top: 150px;
+                    right: -80px;
+                }
+
+                &_dark {
+                    position: absolute;
+                    color: #C3B2A5;
+                    top: 40px;
+                    right: -225px;
+                }
+            }
+        }
+
+        &_banner {
+            padding: 60px 40px;
+            overflow: hidden;
+
+            .section_header {
+                margin-bottom: 60px;
+
+                &-title {
+                    max-width: 470px;
+                }
+
+                &-text {
+                    max-width: 550px;
+                }
+            }
+
+            .main {
+                position: relative;
+                z-index: 2;
+            }
+
+            .media {
+                display: block;
+                position: absolute;
+                height: 492px;
+                width: 506px;
+                color: $light;
+                top: -160px;
+                right: -160px;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .blog {
+        width: calc(100% - 410px);
+        gap: 90px 0;
+        margin-bottom: 0;
+
+        &_tags {
+            margin-bottom: 15px;
+            margin-left: 40px;
+        }
+
+        &_post {
+            .media {
+                margin-bottom: 40px;
+            }
+
+            .main {
+                &_title {
+                    margin-left: 40px;
+                }
+
+                .meta {
+                    margin: 20px 0 8px 40px;
+                }
+
+                .meta, &_text {
+                    margin-left: 80px;
+                }
+            }
+        }
+
+        &_container {
+            display: flex;
+            gap: 0 40px;
+        }
+    }
+}

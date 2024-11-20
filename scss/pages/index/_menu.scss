@@ -1,0 +1,178 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// menu section
+
+.menu {
+    padding-top: 0;
+    &_nav {
+        gap: 0 20px;
+        margin-bottom: 15px;
+
+        .nav-link {
+            position: relative;
+            cursor: pointer;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 2px;
+                width: 0;
+                background: $accentColor;
+                transition: width .5s ease-in-out;
+            }
+
+            &.active, &:hover {
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &_tabs {
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            &_item {
+                height: 240px;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                }
+
+                .link {
+                    display: block;
+                    position: relative;
+
+                    &:hover {
+                        .main {
+                            opacity: 1;
+                        }
+                    }
+
+                    .main {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        top: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 20px;
+                        background: $overlay;
+                        font-size: 14px;
+                        transition: opacity .4s ease-in-out;
+                        opacity: 0;
+
+                        &_price {
+                            border-radius: 50%;
+                            min-height: 40px;
+                            min-width: 40px;
+                            padding: 5px;
+                            width: fit-content;
+                            aspect-ratio: 1 / 1;
+                            background: $accentColor;
+                            color: #fff;
+                            font-family: $accentFont;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        &_title {
+                            margin: 15px 0 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 566.68px) {
+    .menu {
+        &_tabs {
+            &-list {
+                &_item {
+                    height: 340px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.68px) {
+    .menu {
+        &_tabs {
+            &-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                &_item {
+                    width: calc(50% - 7.5px);
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1023.68px) {
+    .menu {
+        &_nav {
+            margin-bottom: 30px;
+            gap: 40px;
+        }
+
+        &_tabs {
+            &-list {
+                gap: 30px;
+
+                &_item {
+                    width: calc(50% - 15px);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1199.68px) {
+    .menu {
+        &_nav {
+            margin-bottom: 20px;
+        }
+        &_tabs {
+            &-list {
+                gap: 0;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+
+                &_item {
+                    width: calc(100% / 4 - 15px);
+                    height: 230px;
+                }
+            }
+        }
+    }
+}

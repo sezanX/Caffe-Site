@@ -1,0 +1,112 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// contacts page main content
+
+.page_cover {
+    background: url("../img/placeholder.jpg") center no-repeat / cover;
+}
+
+.info {
+    &_media {
+        display: none;
+    }
+
+    &_main {
+        gap: 15px;
+
+        .title {
+            margin-bottom: 8px;
+        }
+
+        .list {
+            gap: 8px 15px;
+            font-size: 18px;
+        }
+    }
+}
+
+.contacts {
+    &_form {
+        flex-direction: column;
+        gap: 15px;
+
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 20px;
+            min-height: 200px;
+        }
+    }
+}
+
+// media queries
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .contacts {
+        padding-top: 40px;
+        &_form {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            input {
+                width: calc(50% - 7.5px);
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .info {
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0 60px;
+        }
+
+        &_media {
+            display: block;
+            width: 570px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &_main {
+            gap: 30px;
+        }
+    }
+    .contacts {
+        &_form {
+            gap: 30px;
+
+            input {
+                width: calc(50% - 15px);
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1199.98px) {
+    .contacts {
+        padding-top: 130px;
+    }
+}

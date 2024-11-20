@@ -1,0 +1,130 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// invitation section
+
+.invitation {
+    .media {
+        display: none;
+    }
+
+    .main {
+        &_media {
+            height: 180px;
+            margin-bottom: 30px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .invitation {
+        .main {
+            &_media {
+                height: 280px;
+            }
+
+            .btn {
+                width: fit-content;
+            }
+
+            .btn, .section_header-text {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .invitation {
+        .main {
+            &_media {
+                height: 320px;
+            }
+
+            .section_header {
+                &-title {
+                    .linebreak {
+                        display: block;
+                    }
+                }
+
+                &-text {
+                    max-width: 560px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .invitation {
+        .container {
+            display: flex;
+            gap: 70px;
+            margin-top: 140px;
+        }
+
+        .main {
+            .btn, .section_header-text {
+                margin-left: 40px;
+            }
+
+            &_media {
+                margin-bottom: 60px;
+            }
+        }
+
+        .media {
+            display: block;
+            position: relative;
+            max-width: 500px;
+            flex-grow: 1;
+
+            img {
+                height: 100%;
+                position: relative;
+                z-index: 2;
+            }
+
+            &_oval {
+                position: absolute;
+                z-index: 1;
+                color: $light;
+                top: -140px;
+                left: -180px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1199.98px) {
+    .invitation {
+        .media {
+            &_oval {
+                left: -225px;
+            }
+        }
+    }
+}

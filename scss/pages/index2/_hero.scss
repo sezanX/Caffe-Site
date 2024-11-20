@@ -1,0 +1,172 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// hero section
+
+.hero {
+    background: $primary;
+
+    &_main {
+        position: relative;
+        overflow: hidden;
+        padding: 140px 20px 70px;
+
+        &-media {
+            position: absolute;
+            z-index: 1;
+            color: #D9CFC5;
+            top: -100%;
+        }
+
+        .section_header, .wrapper {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0;
+        }
+
+        .wrapper {
+            gap: 15px;
+            flex-direction: column;
+            margin-top: 30px;
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+
+    &_slider {
+        height: 280px;
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .hero {
+        &_main {
+            &-media {
+                top: -140%;
+            }
+
+            .wrapper {
+                flex-direction: row;
+
+                .btn {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .hero {
+        &_slider {
+            height: 400px;
+        }
+
+        &_main {
+            .section_header-title {
+                max-width: 400px;
+            }
+
+            .section_header-text {
+                max-width: 560px;
+            }
+
+            .section_header-text, .wrapper {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .hero {
+        &_slider {
+            height: 600px;
+        }
+        &_main {
+            min-height: 960px;
+
+            &-media {
+                top: -672px;
+                right: -60px;
+                transform: rotate(-15deg);
+            }
+
+            .section_header-title {
+                max-width: 620px;
+            }
+
+            .section_header-text, .wrapper {
+                margin-left: 40px;
+            }
+
+            .wrapper {
+                margin-top: 40px;
+            }
+        }
+
+        &_media {
+            display: none;
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1399.98px) {
+    .hero {
+        height: 100vh;
+
+        &_container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        &_main {
+            width: 50%;
+            min-height: unset;
+            padding: 130px 20px 70px;
+
+            .section_header-title {
+                max-width: 620px;
+            }
+
+            .wrapper {
+                align-self: flex-start;
+                max-width: 620px;
+            }
+        }
+
+        &_slider {
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            height: auto;
+
+            .swiper-wrapper {
+                height: 100vh !important;
+            }
+        }
+    }
+}

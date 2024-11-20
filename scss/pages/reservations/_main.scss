@@ -1,0 +1,94 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// reservations page main content
+
+.page_cover {
+    background: url("../img/placeholder.jpg") center no-repeat / cover;
+}
+
+.reservation {
+    .section_header {
+        text-align: center;
+
+        &-text {
+            margin: 0 auto;
+        }
+    }
+
+    &_form {
+        grid-gap: 15px;
+        display: grid;
+
+        textarea {
+            min-height: 200px;
+            padding: 20px;
+        }
+
+        .wrapper {
+            position: relative;
+
+            .field {
+                width: 100%;
+                padding-right: 60px;
+            }
+
+            .icon {
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+            }
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .reservation {
+        &_form {
+            grid-template-columns: repeat(2, 1fr);
+
+            textarea {
+                grid-area: 4 / 1 / 5 / 3;
+            }
+
+            .btn {
+                grid-area: 5 / 1 / 6 / 3;
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .reservation {
+        &_form {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+
+            textarea {
+                grid-area: 3 / 1 / 4 / 4;
+            }
+
+            .btn {
+                grid-area: 4 / 1 / 5 / 4;
+            }
+        }
+    }
+}

@@ -1,0 +1,176 @@
+/**
+ * Cafert
+ * Сafert is a stylish and modern cafe template. It was created for the restaurant business: cafe, bar, bakery, pub, restaurant, pizzeria or other restaurant business
+ * Exclusively on https://1.envato.market/cafert-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// datepicker styles
+
+@import "../base/variables";
+
+/**
+ * @package PickMeUp
+ * @author  Nazar Mokrynskyi <nazar@mokrynskyi.com>
+ * @license 0BSD
+ */
+$border-radius                    : .4em !default;
+$color                            : #eee !default;
+$background-hover                 : transparent !default;
+$color-hover                      : $headerColor !default;
+$nav-color                        : gray;
+$not-in-month                     : #666 !default;
+$not-in-month-hover               : #999 !default;
+$disabled                         : $light !default;
+$selected                         : #fff !default;
+$not-in-month-selected-background : transparent !default;
+$day-of-week                      : $not-in-month-hover !default;
+$today-background                 : $not-in-month-selected-background !default;
+$today-color                      : $color-hover !default;
+
+.pickmeup {
+    background      : #fff;
+    border: 1px solid $accentColor;
+    -moz-box-sizing : content-box;
+    box-sizing      : content-box;
+    display         : inline-block;
+    position        : absolute;
+    touch-action    : manipulation;
+    margin-top: 4px;
+
+    * {
+        -moz-box-sizing : border-box;
+        box-sizing      : border-box;
+    }
+
+    &.pmu-flat {
+        position : relative;
+    }
+
+    &.pmu-hidden {
+        display : none;
+    }
+
+    .pmu-instance {
+        display    : inline-block;
+        height     : 13.8em;
+        padding    : .5em;
+        text-align : center;
+        width      : 15em;
+
+        .pmu-button {
+            color           : $accentColor;
+            cursor          : pointer;
+            outline         : none;
+            text-decoration : none;
+            transition: all .3s ease-in-out;
+            font-weight: 500;
+        }
+
+        .pmu-today {
+            background : $today-background;
+            color      : $today-color;
+        }
+
+        .pmu-button:hover {
+            background : $background-hover;
+            color      : $color-hover;
+        }
+
+        .pmu-not-in-month {
+            color : $not-in-month;
+        }
+
+        .pmu-disabled,
+        .pmu-disabled:hover {
+            color  : $disabled;
+            cursor : default;
+        }
+
+        .pmu-selected {
+            background : $accentColor;
+            color      : $selected;
+        }
+
+        .pmu-not-in-month.pmu-selected {
+            background : $not-in-month-selected-background;
+        }
+
+        nav {
+            color       : $nav-color;
+            display     : -ms-flexbox;
+            display     : -webkit-flex;
+            display     : flex;
+            line-height : 2em;
+
+            *:first-child :hover {
+                color : #fff;
+            }
+
+            .pmu-prev,
+            .pmu-next {
+                display : none;
+                height  : 2em;
+                width   : 1em;
+            }
+            .pmu-month {
+                width : 14em;
+            }
+        }
+
+        .pmu-years,
+        .pmu-months {
+            * {
+                display     : inline-block;
+                line-height : 3.6em;
+                width       : 3.5em;
+            }
+        }
+
+        .pmu-day-of-week {
+            color  : $day-of-week;
+            cursor : default;
+        }
+
+        .pmu-day-of-week,
+        .pmu-days {
+            * {
+                display     : inline-block;
+                line-height : 1.5em;
+                width       : 2em;
+            }
+        }
+
+        .pmu-day-of-week * {
+            line-height : 1.8em;
+        }
+    }
+
+    .pmu-instance:first-child .pmu-prev,
+    .pmu-instance:last-child .pmu-next {
+        display : block;
+    }
+
+    .pmu-instance:first-child,
+    .pmu-instance:last-child {
+        .pmu-month {
+            width : 13em;
+        }
+    }
+
+    .pmu-instance:first-child:last-child .pmu-month {
+        width : 12em;
+    }
+
+    &:not(.pmu-view-days) .pmu-days,
+    &:not(.pmu-view-days) .pmu-day-of-week,
+    &:not(.pmu-view-months) .pmu-months,
+    &:not(.pmu-view-years) .pmu-years {
+        display : none;
+    }
+}
